@@ -18,7 +18,7 @@
             height: 100%;
         }
         button .material-icons {
-            font-size: 80px;
+            font-size: 100px;
         }
 
         .btns-wrap {
@@ -33,7 +33,7 @@
         }
         .btn-wrap {
             width: 100%;
-            height: 20%;
+            height: 30%;
         }
         .vol-wrap {
             width: 100%;
@@ -41,10 +41,16 @@
             text-align: center;
         }
         #right {
+            background: #008542;
+            color: #efa72B;
         }
         #wrong {
+            background: #ea6088;
+            color: 153692;
         }
         #goal {
+            background: #fed500;
+            color: #de6c31;
         }
      </style>
 </head>
@@ -72,10 +78,6 @@
             </span>
         </button>
     </div>
-    <div class="vol-wrap">
-        <input type="range" id="volume" min="0" max="100" step="10" value="50">
-        <span id="vol_range">50</span>
-    </div>
     <script>
         // Audioオブジェクトの生成
         let adRight = new Audio("./right.mp3");
@@ -94,20 +96,6 @@
         let btnGoal = document.getElementById("goal");
         btnGoal.addEventListener("click", function(){
             adGoal.play();
-        }, false);
-
-        let eVolume = document.getElementById("volume");
-        let eRange = document.getElementById("vol_range");
-
-        adRight.volume = eVolume.value;
-        adWrong.volume = eVolume.value;
-        adGoal.volume = eVolume.value;
-
-        eVolume.addEventListener("change", function(){
-            adRight.volume = eVolume.value;
-            adWrong.volume = eVolume.value;
-            adGoal.volume = eVolume.value;
-            eRange.textContent = eVolume.value;
         }, false);
     </script>
 </body>
